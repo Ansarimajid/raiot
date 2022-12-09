@@ -3,10 +3,6 @@ from .views import *
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-urlpatterns = ...
-
-urlpatterns += staticfiles_urlpatterns()
-
 urlpatterns = [
     path('', index, name='home'),
     path('create_user', create_user, name = 'create_user'),
@@ -14,3 +10,5 @@ urlpatterns = [
     path('edit_user/<str:username>', edit_user, name='edit_user'),
     path('user/change_password', change_password, name="change_password")
 ]
+
+urlpatterns += staticfiles_urlpatterns()

@@ -118,7 +118,10 @@ USE_TZ = True
 # # STATIC_ROOT = BASE_DIR / 'static'
 
 ##### For Server #######
-
+import os
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 MEDIA_ROOT = '/home/ism/ism/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/ism/ism/static'

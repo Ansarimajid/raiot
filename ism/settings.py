@@ -119,13 +119,11 @@ USE_TZ = True
 
 ##### For Server #######
 import os
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-MEDIA_ROOT = '/home/ism/ism/media'
-MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/ism/ism/static'
+
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
@@ -143,3 +141,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'alphlee67@gmail.com'
 EMAIL_HOST_PASSWORD = 'zjvhvbcdjvhjwoun'
 EMAIL_USE_TLS = True
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
